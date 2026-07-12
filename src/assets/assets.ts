@@ -25,6 +25,13 @@ import facebook from './footer/facebook.svg'
 import twitter from './footer/twitter.svg'
 import youtube from './footer/youtube.svg'
 
+
+
+import blackcolormaps from './contact/map.svg'
+import blackcolorphone from './contact/contact.svg'
+import blackcolormail from './contact/mail.svg'
+import blackcolortiming from './contact/timing.svg'
+
 export {
     herosection,
     logo, footerlogo,
@@ -32,5 +39,6 @@ export {
     aboutoverview1, aboutoverview2, aboutoverview3, aboutoverview4,
     aman_bhagwan, omkar_dhende, pranjal_patil,
     expertise, responsibilities, philosophy,
-    maps, phone, mail, timing, instagram, linkidin, facebook, twitter, youtube
+    maps, phone, mail, timing, instagram, linkidin, facebook, twitter, youtube,
+    blackcolormaps, blackcolorphone, blackcolormail, blackcolortiming
 }
