@@ -32,6 +32,24 @@ import blackcolorphone from './contact/contact.svg'
 import blackcolormail from './contact/mail.svg'
 import blackcolortiming from './contact/timing.svg'
 
+import home from './home_intro/home.png'
+import concept from './home_intro/concept.png'
+import premium from './home_intro/premium.png'
+import strategy from './home_intro/strategy.png'
+import transparent from './home_intro/transparent.png'
+import introline from './home_intro/line.png'
+
+import maharashtraMap from './projectlocation/maharashtraMap.png'
+import clientsIcon from './projectlocation/clientsIcon.png'
+import locationIcon from './projectlocation/locationIcon.png'
+import areaIcon from './projectlocation/areaIcon.png'
+import projectCompleted from './projectlocation/projectCompleted.png'
+
+import farmhousefull from './home/projects/farmhousefull.png'
+import entrance from './home/projects/entrance.png'
+import outerarea from './home/projects/outerarea.png'
+
+import servicesdemo from './home/services/demo.png'
 export {
     herosection,
     logo, footerlogo,
@@ -40,5 +58,9 @@ export {
     aman_bhagwan, omkar_dhende, pranjal_patil,
     expertise, responsibilities, philosophy,
     maps, phone, mail, timing, instagram, linkidin, facebook, twitter, youtube,
-    blackcolormaps, blackcolorphone, blackcolormail, blackcolortiming
+    blackcolormaps, blackcolorphone, blackcolormail, blackcolortiming,
+    home, premium, strategy, concept, transparent, introline,
+    maharashtraMap, clientsIcon, locationIcon, areaIcon, projectCompleted,
+    farmhousefull, entrance, outerarea,
+    servicesdemo
 }
