@@ -8,8 +8,8 @@ const Navbar = () => {
     const routes = [
         { label: "HOME", path: "/" },
         { label: "ABOUT US", path: "/about-us" },
-        { label: "PORTFOLIO", path: "/contact-us" },
-        { label: "SERVICES", path: "/contact-us" },
+        { label: "PORTFOLIO", path: "/services" },
+        { label: "SERVICES", path: "/services" },
         { label: "CONTACT US", path: "/contact-us" },
     ];
 

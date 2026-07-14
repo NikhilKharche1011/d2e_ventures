@@ -1,9 +1,11 @@
 import './App.css'
 import { HashRouter, Routes, Route } from 'react-router'
+import { Suspense, lazy } from 'react'
 const Home = lazy(() => import('./pages/home/Home'))
 const About_us = lazy(() => import('./pages/About_us'))
-import { Suspense, lazy } from 'react'
-import Contact from './pages/Contact'
+const Contact = lazy(() => import('./pages/Contact'))
+const Services = lazy(() => import('./pages/Services'))
+
 function App() {
 
   return (
@@ -14,6 +16,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/about-us' element={<About_us />} />
             <Route path='/contact-us' element={<Contact />} />
+            <Route path='/services' element={<Services />} />
           </Routes>
         </HashRouter>
       </Suspense>

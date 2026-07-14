@@ -66,6 +66,11 @@ const Review = () => {
                     md: "8%",
                     lg: "7%",
                 }}
+                pl={{
+                    base: "6%",
+                    md: "8%",
+                    lg: "20px",
+                }}
                 py={{
                     base: "70px",
                     md: "80px",
@@ -129,7 +134,7 @@ const Review = () => {
                 <Flex w={{
                     base: "100%",
                     lg: "32%",
-                }}   alignItems={'flex-end'} h='100vh'>
+                }} alignItems={'flex-end'} h='100vh'>
                     <Flex
 
                         h={{

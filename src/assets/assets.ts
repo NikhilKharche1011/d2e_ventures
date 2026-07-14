@@ -50,6 +50,15 @@ import entrance from './home/projects/entrance.png'
 import outerarea from './home/projects/outerarea.png'
 
 import servicesdemo from './home/services/demo.png'
+
+import service_client from './services/client_trust/main_image.gif'
+import design_execution from './services/client_trust/design_execution.png'
+import integrated_development from './services/client_trust/integrated_development.png'
+import land_values from './services/client_trust/land_values.png'
+import premium_project from './services/client_trust/premium_project.png'
+import transparent_coordination from './services/client_trust/transparent_coordination.png'
+
+import architecture from './services/development_stage/architecture.png'
 export {
     herosection,
     logo, footerlogo,
@@ -62,5 +71,7 @@ export {
     home, premium, strategy, concept, transparent, introline,
     maharashtraMap, clientsIcon, locationIcon, areaIcon, projectCompleted,
     farmhousefull, entrance, outerarea,
-    servicesdemo
+    servicesdemo,
+    service_client, design_execution, integrated_development, land_values, premium_project, transparent_coordination,
+    architecture
 }
