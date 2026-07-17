@@ -1,7 +1,7 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel } from "swiper/modules";
+import { Autoplay, Mousewheel } from "swiper/modules";
 
 import "swiper/css";
 
@@ -52,7 +52,7 @@ const Review = () => {
     return (
         <Box
             w="100%"
-            h={{ base: "auto", lg: "100vh" }}
+            h={{ base: "auto", lg: "70vh" }}
             minH={{ base: "auto", lg: "700px" }}
             bg="#FAF9F6"
             overflow="hidden"
@@ -71,11 +71,11 @@ const Review = () => {
                     md: "8%",
                     lg: "20px",
                 }}
-                py={{
-                    base: "70px",
-                    md: "80px",
-                    lg: "0",
-                }}
+                // py={{
+                //     base: "70px",
+                //     md: "80px",
+                //     lg: "0",
+                // }}
                 direction={{
                     base: "column",
                     lg: "row",
@@ -89,8 +89,8 @@ const Review = () => {
                     base: 12,
                     lg: 20,
                 }}
+
             >
-                {/* LEFT HEADING */}
 
                 <Box
                     w={{
@@ -130,22 +130,20 @@ const Review = () => {
                     </Text>
                 </Box>
 
-                {/* REVIEWS */}
-                <Flex w={{
-                    base: "100%",
-                    lg: "32%",
-                }} alignItems={'flex-end'} h='100vh'>
+                <Flex
+                    w={{ base: "100%", lg: "32%", }}
+                    // boxShadow=' rgba(0, 0, 0, 0.45) 0px -25px 20px -20px'
+                    alignItems={'flex-end'}
+                    h='90%'
+                    position={'relative'}
+                >
+                    <Box position={'absolute'} top={0} w='100%' left={0} bgColor={'red'} filter={'blur(5px)'}></Box>
                     <Flex
 
-                        h={{
-                            base: "550px",
-                            md: "620px",
-                            lg: "70vh",
-                        }}
+                        // h={'60vh'}
 
-                        maxH={{
-                            lg: "100%",
-                        }}
+                        h="100%"
+                        w="100%"
                         overflow="hidden"
 
                     >
@@ -153,14 +151,21 @@ const Review = () => {
                             direction="vertical"
                             slidesPerView="auto"
                             spaceBetween={18}
+                            loop={true}
+                            speed={5000}
+                            autoplay={{
+                                delay: 0,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true,
+                            }}
                             mousewheel={{
                                 forceToAxis: true,
                                 releaseOnEdges: false,
                             }}
-                            modules={[Mousewheel]}
+                            modules={[Mousewheel, Autoplay]}
                             style={{
                                 width: "100%",
-                                height: "100%",
+                                height: "700px",
                             }}
                         >
                             {reviews.map((review, index) => (

@@ -65,7 +65,7 @@ import integrated_development from './services/client_trust/integrated_developme
 import land_values from './services/client_trust/land_values.png'
 import premium_project from './services/client_trust/premium_project.png'
 import transparent_coordination from './services/client_trust/transparent_coordination.png'
-
+    
 import portfolioherosection from './portfolio/herosection/heroimage.png'
 
 import architecture from './services/development_stage/architecture.png'

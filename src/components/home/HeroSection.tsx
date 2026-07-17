@@ -1,8 +1,11 @@
 import Navbar from "../../layout/Navbar";
-import {  herosectiongif } from "../../assets/assets";
-import { Button, Flex, Text } from "@chakra-ui/react";
+import { herosectiongif } from "../../assets/assets";
+import { Button, chakra, Flex, Text } from "@chakra-ui/react";
+import { motion } from "motion/react";
 
 const HeroSection = () => {
+
+    const MotionFlex = chakra(motion(Flex))
     return (
         <Flex
             h="100vh"
@@ -28,8 +31,34 @@ const HeroSection = () => {
                     textAlign="center"
                     px={4}
                 >
-                    <Flex
-                        direction="column"
+                    <MotionFlex
+                        initial={{
+                            y: 1000,
+                            opacity: 0,
+                            scale: 0.5,
+                            transition: {
+                                duration: 1,
+                                ease: "easeInOut",
+                            }
+                        }}
+                        animate={{
+                            y: 0,
+                            scale: 1,
+                            opacity: 2,
+                            transition: {
+                                duration: 4,
+                                ease: "easeInOut",
+                            }
+                        }}
+                        exit={{
+                            y: -100,
+                            opacity: 0,
+                            transition: {
+                                duration: 3,
+                                ease: "easeInOut",
+                            }
+                        }}
+                        flexDirection="column"
                         align="center"
                         gap={5}
                         maxW="900px"
@@ -87,7 +116,7 @@ const HeroSection = () => {
                                 ENQUIRE NOW
                             </Button>
                         </Flex>
-                    </Flex>
+                    </MotionFlex>
                 </Flex>
             </Flex>
         </Flex>

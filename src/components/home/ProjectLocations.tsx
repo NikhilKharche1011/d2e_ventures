@@ -13,30 +13,48 @@ import {
     clientsIcon,
     areaIcon,
 } from "../../assets/assets";
+import CountUp from "../../utlis/CountUp";
+import { keyframes } from "@emotion/react";
 
 const stats = [
     {
         icon: projectCompleted,
-        value: "30+",
+        end: 30,
+        suffix: "+",
         label: "Projects\nCompleted",
     },
     {
         icon: locationIcon,
-        value: "12+",
+        end: 12,
+        suffix: "+",
         label: "Cities\nTouched",
     },
     {
         icon: clientsIcon,
-        value: "500+",
+        end: 500,
+        suffix: "+",
         label: "Happy\nClients",
     },
     {
         icon: areaIcon,
-        value: "10M+",
+        end: 10,
+        suffix: "M+",
         label: "Sq. Ft. Developed\n& Delivered",
     },
 ];
+const pulse = keyframes`
+    0% {
+        transform: scale(0.7);
+    }
 
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.7);
+    }
+`;
 const ProjectLocations = () => {
     return (
         <Box
@@ -90,7 +108,7 @@ const ProjectLocations = () => {
                     }}
                 >
                     <Text
-                        
+
                         fontSize="28px"
                         mb={2}
                     >
@@ -132,15 +150,92 @@ const ProjectLocations = () => {
                 {/* Right */}
 
                 <Flex justify="center">
-                    <Image
-                        src={maharashtraMap}
+                    <Box
+                        position="relative"
                         w={{
                             base: "100%",
                             md: "80%",
                             lg: "90%",
                         }}
                         maxW="650px"
-                    />
+                    >
+                        <Image
+                            src={maharashtraMap}
+                            w="100%"
+                            display="block"
+                        />
+
+                        {/* Mumbai */}
+                        <Box
+                            position="absolute"
+                            left="11%"
+                            top="39%"
+                            transform="translate(-50%, -50%)"
+                        >
+                            <Box
+                                w="14px"
+                                h="14px"
+                                bg="#C8A96B"
+                                borderRadius="full"
+                                animation={`${pulse} 1.2s ease-in-out infinite`}
+                            />
+                            <Text
+                                mt={1}
+                                fontSize="20px"
+                                color="#1E1E1E"
+                                fontWeight="500"
+                            >
+                                Mumbai
+                            </Text>
+                        </Box>
+
+                        {/* Nashik */}
+                        <Box
+                            position="absolute"
+                            left="23%"
+                            top="24%"
+                            transform="translate(-50%, -50%)"
+                        >
+                            <Box
+                                w="10px"
+                                h="10px"
+                                bg="#C8A96B"
+                                borderRadius="full"
+                                animation={`${pulse} 1.2s ease-in-out infinite`}
+                            />
+                            <Text
+                                mt={1}
+                                fontSize="20px"
+                                color="#1E1E1E"
+                                fontWeight="500"
+                            >
+                                Nashik
+                            </Text>
+                        </Box>
+
+                        <Box
+                            position="absolute"
+                            left="19%"
+                            top="55%"
+                            transform="translate(-50%, -50%)"
+                        >
+                            <Box
+                                w="20px"
+                                h="20px"
+                                bg="#C8A96B"
+                                borderRadius="full"
+                                animation={`${pulse} 1.2s ease-in-out infinite`}
+                            />
+                            <Text
+                                mt={1}
+                                fontSize="20px"
+                                color="#1E1E1E"
+                                fontWeight="500"
+                            >
+                                Pune
+                            </Text>
+                        </Box>
+                    </Box>
                 </Flex>
             </Grid>
 
@@ -161,7 +256,7 @@ const ProjectLocations = () => {
             >
                 {stats.map((item, i) => (
                     <Flex
-                        key={item.value}
+                        key={item.end}
                         justify="center"
                         align="center"
                         gap={5}
@@ -184,7 +279,7 @@ const ProjectLocations = () => {
                                 fontWeight="700"
                                 fontSize="30px"
                             >
-                                {item.value}
+                                <CountUp end={item.end} suffix={item.suffix} />
                             </Text>
 
                             <Text

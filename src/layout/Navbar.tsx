@@ -2,6 +2,7 @@ import {
     Drawer,
     Portal,
     CloseButton,
+    chakra,
 } from "@chakra-ui/react";
 import { logo } from "../assets/assets";
 import {
@@ -11,14 +12,15 @@ import {
     IconButton,
 } from "@chakra-ui/react";
 import { Link, useLocation, useNavigate } from "react-router";
-import { IoMenu } from "react-icons/io5";
 import { useState } from "react";
+import { CgMenuRightAlt } from "react-icons/cg";
+import { motion } from "motion/react"
 
 const Navbar = () => {
     const location = useLocation();
 
     const [open, setOpen] = useState(false);
-
+    const MotionFlex = chakra(motion(Flex))
     const routes = [
         { label: "HOME", path: "/" },
         { label: "ABOUT US", path: "/about-us" },
@@ -29,7 +31,33 @@ const Navbar = () => {
     const navigate = useNavigate()
     return (
         <>
-            <Flex
+            <MotionFlex
+                initial={{
+                    y: -100,
+                    opacity: 0.5,
+                    transition: {
+                        duration: 1,
+                        ease: "easeInOut",
+                    }
+                }}
+                animate={{
+                    y: 0,
+                    opacity: 2,
+                    transition: {
+                        duration: 1.5,
+                        ease: "easeInOut",
+                    }
+                }}
+                exit={{
+                    y: -100,
+                    opacity: 0,
+                    transition: {
+                        duration: 3,
+                        ease: "easeInOut",
+                    }
+                }}
+
+
                 w="100%"
                 h={{ base: "80px", lg: "100px" }}
                 px={{
@@ -111,14 +139,15 @@ const Navbar = () => {
                     // size={'lg'}
                     size='2xl'
                     onClick={() => setOpen(true)}
+                    _hover={{ bgColor: 'transparent' }}
                 >
-                    <IoMenu />
+                    <CgMenuRightAlt />
                 </IconButton>
-            </Flex>
+            </MotionFlex >
 
             {/* Drawer */}
 
-            <Drawer.Root
+            < Drawer.Root
                 open={open}
                 onOpenChange={(e) => setOpen(e.open)}
                 placement="end"
@@ -187,7 +216,7 @@ const Navbar = () => {
                         </Drawer.Content>
                     </Drawer.Positioner>
                 </Portal>
-            </Drawer.Root>
+            </Drawer.Root >
         </>
     );
 };

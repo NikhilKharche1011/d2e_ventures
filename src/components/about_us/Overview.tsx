@@ -13,23 +13,33 @@ import {
     aboutoverview3,
     aboutoverview4,
 } from "../../assets/assets";
+import CountUp from "../../utlis/CountUp";
 
 const Overview = () => {
     const stats = [
         {
-            value: "10,000+",
+            key: "builtup",
+            end: 10000,
+            suffix: "+",
             label: "Total Built-up\nArea Designed",
         },
         {
-            value: "4.7/5",
+            key: "clientsatisfaction",
+            end: 4.7,
+            decimals: 1,
+            suffix: "/5",
             label: "Client Satisfaction\nScore",
         },
         {
-            value: "4+",
+            key: "yearsexperience",
+            end: 4,
+            suffix: "+",
             label: "Years of\nExperience",
         },
         {
-            value: "500+",
+            key: "visitsconducted",
+            end: 500,
+            suffix: "+",
             label: "Site Visits\nConducted",
         },
     ];
@@ -123,7 +133,7 @@ const Overview = () => {
                         maxW="350px"
                     >
                         {stats.map((stat) => (
-                            <Box key={stat.value}>
+                            <Box >
                                 <Text
                                     fontSize={{
                                         base: "22px",
@@ -132,7 +142,34 @@ const Overview = () => {
                                     fontWeight="700"
                                     color="#080808"
                                 >
-                                    {stat.value}
+                                    {stat.key === "builtup" && (
+                                        <CountUp
+                                            end={10000}
+                                            suffix="+"
+                                        />
+                                    )}
+
+                                    {stat.key === "clientsatisfaction" && (
+                                        <CountUp
+                                            end={4.7}
+                                            decimals={1}
+                                            suffix="/5"
+                                        />
+                                    )}
+
+                                    {stat.key === "yearsexperience" && (
+                                        <CountUp
+                                            end={4}
+                                            suffix="+"
+                                        />
+                                    )}
+
+                                    {stat.key === "visitsconducted" && (
+                                        <CountUp
+                                            end={500}
+                                            suffix="+"
+                                        />
+                                    )}
                                 </Text>
 
                                 <Text

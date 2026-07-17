@@ -16,3 +16,8 @@
 .michroma_font {
   font-family: "Michroma", sans-serif
 }
+
+
+.swiper-wrapper {
+  transition-timing-function: linear !important;
+}

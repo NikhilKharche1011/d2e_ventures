@@ -5,8 +5,8 @@ import { homeservicesarchitecture, homeservicesinterior, homeserviceslandscape, 
 const services = [
     { title: "ARCHITECTURE", image: homeservicesarchitecture },
     { title: "INTERIOR", image: homeservicesinterior },
-    { title: "PLOTTING", image: homeserviceslandscape },
-    { title: "LANDSCAPE", image: homeservicesplotting },
+    { title: "PLOTTING", image: homeservicesplotting },
+    { title: "LANDSCAPE", image: homeserviceslandscape },
     { title: "PREMIUM VILLAS", image: homeservicespremium_villa },
     { title: "TURNKEY", image: homeservicesturnkey_execution },
 ];
