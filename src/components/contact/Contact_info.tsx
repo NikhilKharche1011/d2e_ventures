@@ -95,7 +95,7 @@ const Contact_info = () => {
                         fontWeight="700"
                         lineHeight="1.1"
                     >
-                        Aways Here to Help You
+                        Always Here to Help You
                     </Text>
 
                     <Text

@@ -1,4 +1,5 @@
 import herosection from './herosection.svg'
+import herosectiongif from './home/herosection/animation.gif'
 import logo from './Vector.png'
 import footerlogo from './footerlogo.svg'
 import services from './services.svg'
@@ -50,6 +51,13 @@ import entrance from './home/projects/entrance.png'
 import outerarea from './home/projects/outerarea.png'
 
 import servicesdemo from './home/services/demo.png'
+import homeservicesarchitecture from './home/services/services_architecture.webp'
+import homeservicesinterior from './home/services/services_interiors.webp'
+import homeservicesplotting from './home/services/plotting.webp'
+import homeserviceslandscape from './home/services/landscape.webp'
+import homeservicespremium_villa from './home/services/premium_villa.webp'
+import homeservicesturnkey_execution from './home/services/turnkey_execution.webp'
+
 
 import service_client from './services/client_trust/main_image.gif'
 import design_execution from './services/client_trust/design_execution.png'
@@ -58,9 +66,12 @@ import land_values from './services/client_trust/land_values.png'
 import premium_project from './services/client_trust/premium_project.png'
 import transparent_coordination from './services/client_trust/transparent_coordination.png'
 
+import portfolioherosection from './portfolio/herosection/heroimage.png'
+
 import architecture from './services/development_stage/architecture.png'
+import areasize from './portfolio/herosection/areasize.png'
 export {
-    herosection,
+    herosection, herosectiongif,
     logo, footerlogo,
     services,
     aboutoverview1, aboutoverview2, aboutoverview3, aboutoverview4,
@@ -71,7 +82,8 @@ export {
     home, premium, strategy, concept, transparent, introline,
     maharashtraMap, clientsIcon, locationIcon, areaIcon, projectCompleted,
     farmhousefull, entrance, outerarea,
-    servicesdemo,
+    servicesdemo, homeservicesarchitecture, homeservicesinterior, homeserviceslandscape, homeservicesplotting, homeservicespremium_villa, homeservicesturnkey_execution,
     service_client, design_execution, integrated_development, land_values, premium_project, transparent_coordination,
-    architecture
+    architecture,
+    portfolioherosection, areasize
 }

@@ -1,5 +1,5 @@
 import Navbar from "../../layout/Navbar";
-import { herosection } from "../../assets/assets";
+import {  herosectiongif } from "../../assets/assets";
 import { Button, Flex, Text } from "@chakra-ui/react";
 
 const HeroSection = () => {
@@ -7,7 +7,7 @@ const HeroSection = () => {
         <Flex
             h="100vh"
             w="100%"
-            bgImage={`url(${herosection})`}
+            bgImage={`url(${herosectiongif})`}
             bgSize="cover"
             backgroundPosition="center"
             bgRepeat="no-repeat"
@@ -16,7 +16,8 @@ const HeroSection = () => {
                 flexDir="column"
                 w="100%"
                 h="100%"
-                bg="rgba(0,0,0,0.55)"
+                bg="#00000080"
+
             >
                 <Navbar />
 
@@ -40,12 +41,12 @@ const HeroSection = () => {
                             color="white"
                             fontWeight="800"
                         >
-                            Crafting Spaces,
+                            Your Vision.
                             <br />
-                            <Text  className="michroma_font"     as="span" color="#C8A96B">
-                                Inspiring
+                            <Text className="michroma_font" as="span" color="#C8A96B">
+                                Expertly
                             </Text>{" "}
-                            Lives.
+                            Built.
                         </Text>
 
                         <Text
@@ -56,7 +57,7 @@ const HeroSection = () => {
                             Integrated Land, Luxury & Development Consultancy.
                         </Text>
 
-                        <Flex mt={2} gap={5}>
+                        <Flex flexDirection={{ base: 'column', md: 'row' }} mt={2} gap={5}>
                             <Button
                                 bg="#C8A96B"
                                 color="black"

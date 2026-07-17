@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
-import { servicesdemo } from "../../assets/assets";
+import { homeservicesarchitecture, homeservicesinterior, homeserviceslandscape, homeservicesplotting, homeservicespremium_villa, homeservicesturnkey_execution, } from "../../assets/assets";
 
 const services = [
-    { title: "ARCHITECTURE", image: servicesdemo },
-    { title: "INTERIOR", image: servicesdemo },
-    { title: "PLOTTING", image: servicesdemo },
-    { title: "LANDSCAPE", image: servicesdemo },
-    { title: "PREMIUM VILLAS", image: servicesdemo },
-    { title: "TURNKEY", image: servicesdemo },
+    { title: "ARCHITECTURE", image: homeservicesarchitecture },
+    { title: "INTERIOR", image: homeservicesinterior },
+    { title: "PLOTTING", image: homeserviceslandscape },
+    { title: "LANDSCAPE", image: homeservicesplotting },
+    { title: "PREMIUM VILLAS", image: homeservicespremium_villa },
+    { title: "TURNKEY", image: homeservicesturnkey_execution },
 ];
 
 
@@ -38,9 +38,9 @@ const Services = () => {
                 maxW="1500px"
                 // mx="auto"
                 px={{
-                base: "5%",
-                xl: "7%",
-            }}
+                    base: "5%",
+                    xl: "7%",
+                }}
                 h={{ base: "auto", lg: "28%" }}
                 py={{ base: 14, lg: 0 }}
                 alignItems="center"

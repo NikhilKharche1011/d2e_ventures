@@ -1,5 +1,5 @@
-import Navbar from "../../layout/Navbar";
 import { services } from "../../assets/assets";
+import Navbar from "../../layout/Navbar";
 import { Flex, Text } from "@chakra-ui/react";
 
 
