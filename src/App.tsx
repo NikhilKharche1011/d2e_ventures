@@ -21,7 +21,7 @@ function App() {
             <Route path='/portfolio' element={<Portfolio />} />
           </Routes>
         </HashRouter>
-      </Suspense>
+      </Suspense> 
     </>
   )
 }
