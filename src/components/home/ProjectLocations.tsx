@@ -1,5 +1,6 @@
 import {
     Box,
+    chakra,
     Flex,
     Grid,
     Image,
@@ -15,6 +16,7 @@ import {
 } from "../../assets/assets";
 import CountUp from "../../utlis/CountUp";
 import { keyframes } from "@emotion/react";
+import { motion } from "motion/react";
 
 const stats = [
     {
@@ -56,6 +58,10 @@ const pulse = keyframes`
     }
 `;
 const ProjectLocations = () => {
+
+    const MotionImage = chakra(motion(Image))
+    const MotionBox = chakra(motion(Box))
+    const MotionText = chakra(motion(Text))
     return (
         <Box
             bg="#1F1D1C"
@@ -158,19 +164,47 @@ const ProjectLocations = () => {
                         }}
                         maxW="650px"
                     >
-                        <Image
+                        <MotionImage
+                            initial={{
+                                scale: 0,
+                                opacity: 0
+                            }}
+                            whileInView={{
+                                scale: 1,
+                                opacity: 1,
+                                transition: { duration: 0.7 }
+                            }}
+                            viewport={{ once: true }}
+
                             src={maharashtraMap}
                             w="100%"
                             display="block"
                         />
 
                         {/* Mumbai */}
+                        {/* Mumbai */}
                         <Box
                             position="absolute"
                             left={{ base: "4%", md: "4%" }}
                             top={{ base: "36%", md: "36%" }}
                         >
-                            <Box
+                            <MotionBox
+                                initial={{
+                                    scale: 0,
+                                    rotate: -180,
+                                    opacity: 0,
+                                }}
+                                whileInView={{
+                                    scale: 1,
+                                    rotate: 0,
+                                    opacity: 1,
+                                    transition: {
+                                        duration: 0.8,
+                                        ease: "easeOut",
+                                        delay: 4
+                                    },
+                                }}
+                                viewport={{ once: true }}
                                 w={{ base: "10px", md: "14px" }}
                                 h={{ base: "10px", md: "14px" }}
                                 bg="#C8A96B"
@@ -178,7 +212,20 @@ const ProjectLocations = () => {
                                 animation={`${pulse} 1.2s ease-in-out infinite`}
                             />
 
-                            <Text
+                            <MotionText
+                                initial={{
+                                    opacity: 0,
+                                    x: -25,
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    x: 0,
+                                    transition: {
+                                        duration: 0.6,
+                                        delay: 4
+                                    },
+                                }}
+                                viewport={{ once: true }}
                                 position="absolute"
                                 left={{ base: "14px", md: "18px" }}
                                 top="-8px"
@@ -191,7 +238,7 @@ const ProjectLocations = () => {
                                 fontWeight="500"
                             >
                                 Mumbai
-                            </Text>
+                            </MotionText>
                         </Box>
 
                         {/* Nashik */}
@@ -200,7 +247,22 @@ const ProjectLocations = () => {
                             left={{ base: "16%", md: "16%" }}
                             top={{ base: "20%", md: "20%" }}
                         >
-                            <Box
+                            <MotionBox
+                                initial={{
+                                    y: -60,
+                                    opacity: 0,
+                                }}
+                                whileInView={{
+                                    y: 0,
+                                    opacity: 1,
+                                    transition: {
+                                        type: "spring",
+                                        stiffness: 180,
+                                        damping: 10,
+                                        delay: 3
+                                    },
+                                }}
+                                viewport={{ once: true }}
                                 w={{ base: "8px", md: "10px" }}
                                 h={{ base: "8px", md: "10px" }}
                                 bg="#C8A96B"
@@ -208,7 +270,20 @@ const ProjectLocations = () => {
                                 animation={`${pulse} 1.2s ease-in-out infinite`}
                             />
 
-                            <Text
+                            <MotionText
+                                initial={{
+                                    opacity: 0,
+                                    y: -15,
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: {
+                                        duration: 0.5,
+                                        delay: 3,
+                                    },
+                                }}
+                                viewport={{ once: true }}
                                 position="absolute"
                                 left={{ base: "12px", md: "16px" }}
                                 top="-10px"
@@ -221,7 +296,7 @@ const ProjectLocations = () => {
                                 fontWeight="500"
                             >
                                 Nashik
-                            </Text>
+                            </MotionText>
                         </Box>
 
                         {/* Konkan */}
@@ -230,7 +305,21 @@ const ProjectLocations = () => {
                             left={{ base: "5%", md: "5%" }}
                             top={{ base: "45%", md: "45%" }}
                         >
-                            <Box
+                            <MotionBox
+                                initial={{
+                                    x: -60,
+                                    opacity: 0,
+                                }}
+                                whileInView={{
+                                    x: 0,
+                                    opacity: 1,
+                                    transition: {
+                                        duration: 0.7,
+                                        ease: "easeOut",
+                                        delay: 2
+                                    },
+                                }}
+                                viewport={{ once: true }}
                                 w={{ base: "8px", md: "10px" }}
                                 h={{ base: "8px", md: "10px" }}
                                 bg="#C8A96B"
@@ -238,7 +327,20 @@ const ProjectLocations = () => {
                                 animation={`${pulse} 1.2s ease-in-out infinite`}
                             />
 
-                            <Text
+                            <MotionText
+                                initial={{
+                                    opacity: 0,
+                                    x: -30,
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    x: 0,
+                                    transition: {
+                                        duration: 0.5,
+                                        delay: 2,
+                                    },
+                                }}
+                                viewport={{ once: true }}
                                 position="absolute"
                                 left={{ base: "12px", md: "16px" }}
                                 top="-10px"
@@ -251,7 +353,7 @@ const ProjectLocations = () => {
                                 fontWeight="500"
                             >
                                 Konkan
-                            </Text>
+                            </MotionText>
                         </Box>
 
                         {/* Pune */}
@@ -260,7 +362,22 @@ const ProjectLocations = () => {
                             left={{ base: "18%", md: "18%" }}
                             top={{ base: "48%", md: "48%" }}
                         >
-                            <Box
+                            <MotionBox
+                                initial={{
+                                    scale: 0,
+                                    y: 30,
+                                    opacity: 0,
+                                }}
+                                whileInView={{
+                                    scale: [0, 1.25, 1],
+                                    y: 0,
+                                    opacity: 1,
+                                    transition: {
+                                        duration: 0.9,
+                                        delay: 1
+                                    },
+                                }}
+                                viewport={{ once: true }}
                                 w={{ base: "14px", md: "20px" }}
                                 h={{ base: "14px", md: "20px" }}
                                 bg="#C8A96B"
@@ -268,7 +385,22 @@ const ProjectLocations = () => {
                                 animation={`${pulse} 1.2s ease-in-out infinite`}
                             />
 
-                            <Text
+                            <MotionText
+                                initial={{
+                                    opacity: 0,
+                                    scale: 0.7,
+                                    x: 30
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    scale: 1,
+                                    x: 0,
+                                    transition: {
+                                        duration: 0.5,
+                                        delay: 1,
+                                    },
+                                }}
+                                viewport={{ once: true }}
                                 position="absolute"
                                 left={{ base: "18px", md: "24px" }}
                                 top="-6px"
@@ -281,7 +413,7 @@ const ProjectLocations = () => {
                                 fontWeight="500"
                             >
                                 Pune
-                            </Text>
+                            </MotionText>
                         </Box>
                     </Box>
                 </Flex>

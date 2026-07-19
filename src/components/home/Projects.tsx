@@ -15,10 +15,12 @@ import {
 import ReactCompareImage from "react-compare-image";
 import { motion } from "motion/react";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const Projects = () => {
     const MotionText = chakra(motion(Text))
     const [showHint, setShowHint] = useState(true);
+    const navigate = useNavigate()
     return (
         <Box
             w="100%"
@@ -286,6 +288,8 @@ const Projects = () => {
                             <Flex
                                 align="center"
                                 gap={3}
+                                cursor={'pointer'}
+                                onClick={() => navigate('/portfolio')}
                             >
                                 Explore Project
                                 <GoArrowRight size={20} />

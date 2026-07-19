@@ -8,7 +8,7 @@ import {
     Text,
 } from "@chakra-ui/react";
 import {
-    home, premium, strategy, concept, transparent, introline
+    home, premium, strategy, concept, transparent,
 } from '../../assets/assets'
 
 const features = [
@@ -84,7 +84,7 @@ const IntroSection = () => {
                             objectFit="cover"
                             borderRadius="18px"
                         />
-                        <Image
+                        {/* <Image
                             src={introline}
                             objectFit="cover"
                             borderRadius="18px"
@@ -98,7 +98,7 @@ const IntroSection = () => {
                             }}
                             position={'absolute'}
                             zIndex={2222}
-                        />
+                        /> */}
 
                         {/* Badge */}
 

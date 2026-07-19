@@ -5,8 +5,47 @@ import {
     Input,
     Text,
 } from "@chakra-ui/react";
+import { useForm } from "react-hook-form";
 
+type FormValues = {
+    fullName: string;
+    phone: string;
+};
 const ChooseUs = () => {
+    const {
+        register,
+        handleSubmit,
+        // formState: { errors },
+        reset,
+    } = useForm<FormValues>();
+
+    const onSubmit = (data: FormValues) => {
+        const businessPhone = ["8265068887"];
+        // const businessPhone = ["8265068887", '8080200814'];
+
+        const message = `Hello D2E Ventures,
+
+I would like to receive complete project details.
+
+Name: ${data.fullName}
+Phone: ${data.phone}
+
+Please share the floor plans, brochure, pricing and site visit details.
+
+Thank you.`;
+
+        businessPhone.map(bp =>
+
+            window.open(
+                `https://wa.me/${bp}?text=${encodeURIComponent(
+                    message
+                )}`,
+                "_blank"
+            )
+        )
+
+        reset();
+    };
     return (
         <Box
             w="100%"
@@ -22,11 +61,6 @@ const ChooseUs = () => {
                 md: "90px",
                 lg: "100px",
             }}
-            // pl={{
-            //     base: "6%",
-            //     md: "8%",
-            //     lg: "20px",
-            // }}
         >
             <Flex
                 w="100%"
@@ -109,7 +143,6 @@ const ChooseUs = () => {
                     </Text>
                 </Box>
 
-                {/* PROJECT DETAILS FORM */}
 
                 <Box
                     w={{
@@ -133,6 +166,8 @@ const ChooseUs = () => {
                         base: 6,
                         md: 7,
                     }}
+                    as="form"
+                    onSubmit={handleSubmit(onSubmit)}
                 >
                     <Text
                         fontSize={{
@@ -204,6 +239,9 @@ const ChooseUs = () => {
                                 borderColor: "#C8A96B",
                                 boxShadow: "none",
                             }}
+                            {...register("fullName", {
+                                required: "Full Name is required",
+                            })}
                         />
                     </Box>
 
@@ -238,6 +276,14 @@ const ChooseUs = () => {
                                 borderColor: "#C8A96B",
                                 boxShadow: "none",
                             }}
+                            {...register("phone", {
+                                required: "Phone Number is required",
+                                pattern: {
+                                    value: /^[6-9]\d{9}$/,
+                                    message:
+                                        "Enter a valid 10-digit mobile number",
+                                },
+                            })}
                         />
                     </Box>
 
@@ -255,6 +301,7 @@ const ChooseUs = () => {
                                 base: "100%",
                                 sm: "auto",
                             }}
+                            type="submit"
                             bg="#1E1E1E"
                             color="#FFFFFF"
                             h="45px"

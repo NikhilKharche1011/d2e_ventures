@@ -135,9 +135,17 @@ const Navbar = () => {
                     aria-label="Open Menu"
                     variant="ghost"
                     color="#C8A96B"
-                    // fontSize="40px"
+                    fontSize="40px"
                     // size={'lg'}
                     size='2xl'
+                    h='max-content'
+                    w='max-content'
+                    justifyContent={'flex-end'}
+                    m={0}
+                    // p={0}
+                    p={' 0px 0px 20px 0px'}
+                    alignItems={'flex-end'}
+
                     onClick={() => setOpen(true)}
                     _hover={{ bgColor: 'transparent' }}
                 >

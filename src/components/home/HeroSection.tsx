@@ -1,8 +1,9 @@
 import Navbar from "../../layout/Navbar";
-import {  homeherosectionvideo } from "../../assets/assets";
+import { homeherosectionvideo } from "../../assets/assets";
 import { Button, chakra, Flex, Text } from "@chakra-ui/react";
 import { motion } from "motion/react";
 import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router";
 
 const HeroSection = () => {
 
@@ -31,6 +32,7 @@ const HeroSection = () => {
             video.removeEventListener("loadedmetadata", handleLoadedMetadata);
         };
     }, []);
+    const navigate = useNavigate()
     return (
         <Flex
             h="100vh"
@@ -41,7 +43,7 @@ const HeroSection = () => {
             // bgRepeat="no-repeat"
             position={'relative'}
 
-            
+
         >
             <video
                 ref={videoRef}
@@ -142,7 +144,8 @@ const HeroSection = () => {
                                 _hover={{
                                     bg: "#b89558",
                                 }}
-                            >
+                                onClick={() => navigate('/portfolio')}
+                                >
                                 EXPLORE PROJECTS
                             </Button>
 
@@ -154,6 +157,7 @@ const HeroSection = () => {
                                 size="lg"
                                 px={8}
                                 borderRadius="6px"
+                                onClick={() => navigate('/contact-us')}
                                 _hover={{
                                     bg: "#C8A96B",
                                     color: "black",

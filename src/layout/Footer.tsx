@@ -40,7 +40,7 @@ const Footer = () => {
             borderTopRadius="40px"
             pb={0}
             px={{ base: 6, md: 10, lg: 14 }}
-            // py={{ base: 5, lg: 7 }}
+        // py={{ base: 5, lg: 7 }}
         >
             <Grid
                 templateColumns={{
@@ -49,7 +49,7 @@ const Footer = () => {
                     lg: "1.2fr 1fr 1.5fr 1.2fr",
                 }}
                 gap={{ base: 10, lg: 6 }}
-                py={{ base: 4, lg: '90px' }}
+                py={{ base: '50px', lg: '90px' }}
             >
 
 
@@ -238,11 +238,17 @@ const Footer = () => {
                 <Text
                     color="#CCCCCC"
                     fontSize="14px"
+                    textAlign={'center'}
+                    w={{ base: '100%', md: 'max-content' }}
+
                 >
                     © 2026 D2E Ventures PVT. LTD. All Rights Reserved.
                 </Text>
 
                 <Flex
+                    justifyContent={'center'}
+                    w={{ base: '100%', md: 'max-content' }}
+                    alignItems={'center'}
                     gap={8}
                     fontSize="14px"
                 >
