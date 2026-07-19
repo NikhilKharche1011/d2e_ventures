@@ -13,20 +13,20 @@ const ChooseUs = () => {
             // bg="#FAF9F6"
             bgGradient={'linear-gradient(261deg, rgba(200, 169, 107, 0.1) 0%, rgba(200, 169, 107, 0.05) 30%, rgba(200, 169, 107, 0.05) 70%, rgba(200, 169, 107, 0.1) 100%)'}
             px={{
-                base: "6%",
-                md: "8%",
-                lg: "7%",
+                base: 6,
+                md: 10,
+                lg: 20,
             }}
             py={{
                 base: "70px",
                 md: "90px",
                 lg: "100px",
             }}
-            pl={{
-                base: "6%",
-                md: "8%",
-                lg: "20px",
-            }}
+            // pl={{
+            //     base: "6%",
+            //     md: "8%",
+            //     lg: "20px",
+            // }}
         >
             <Flex
                 w="100%"

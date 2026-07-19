@@ -46,8 +46,6 @@ const contactDetails = [
         value: (
             <>
                 d2eventurespvtltd@gmail.com
-                <br />
-                support@thetork.com
             </>
         ),
     },
@@ -56,9 +54,9 @@ const contactDetails = [
         title: "Hours of operation",
         value: (
             <>
-                Monday - Friday: 09:00 - 20:00
+                Monday - Friday: 09:00 AM - 08:00 PM
                 <br />
-                Sunday & Saturday: 10:30 - 22:30
+                Sunday & Saturday: 10:30 AM - 10:30 PM
             </>
         ),
     },
@@ -121,8 +119,10 @@ const Contact_info = () => {
                                 align="flex-start"
                             >
                                 <Flex
-                                    minW="60px"
-                                    h="60px"
+                                    // minW="60px"
+                                    minW={{ base: "45px", md: "60px" }}
+                                    h={{ base: "45px", md: "60px" }}
+                                    // h="60px"
                                     borderRadius="full"
                                     bg="#F4F4F4"
                                     justify="center"
@@ -131,7 +131,7 @@ const Contact_info = () => {
                                 >
                                     <Image
                                         src={item.icon}
-                                        boxSize="25px"
+                                        boxSize={{ base: "20px", md: "25px" }}
                                         objectFit={'contain'}
                                     />
                                 </Flex>

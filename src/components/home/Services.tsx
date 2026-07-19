@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
 import { homeservicesarchitecture, homeservicesinterior, homeserviceslandscape, homeservicesplotting, homeservicespremium_villa, homeservicesturnkey_execution, } from "../../assets/assets";
+import { Swiper, SwiperSlide } from "swiper/react";
 
+import "swiper/css";
+import "swiper/css/pagination";
 const services = [
     { title: "ARCHITECTURE", image: homeservicesarchitecture },
     { title: "INTERIOR", image: homeservicesinterior },
@@ -33,21 +36,24 @@ const Services = () => {
     };
 
     return (
-        <Box bg="#1C1B1A" color="white" h={{ base: "auto", lg: "100vh" }}>
+        <Box bg="#1C1B1A" color="white" h={{ base: "auto", lg: "100%" }}>
             <Flex
                 maxW="1500px"
                 // mx="auto"
                 px={{
-                    base: "5%",
-                    xl: "7%",
+                    base: 6,
+                    md: 10,
+                    lg: 20,
                 }}
-                h={{ base: "auto", lg: "28%" }}
-                py={{ base: 14, lg: 0 }}
+                h={{ base: "auto", lg: "30%" }}
+               
+                py={{ base: 7, lg: 7 }}
                 alignItems="center"
             >
                 <Box>
                     <Text
-                        fontSize={{ base: "40px", lg: "52px" }}
+                     pt={{base:8, md:6, lg:8}}
+                        fontSize={{ base: "38px", lg: "50px" }}
                         fontWeight="700"
                     >
                         Services
@@ -61,7 +67,7 @@ const Services = () => {
                     </Text>
 
                     <Text
-                        fontSize={{ base: "38px", lg: "56px" }}
+                        fontSize={{ base: "38px", lg: "50px" }}
                         fontWeight="700"
                     >
                         Your Needs
@@ -69,9 +75,10 @@ const Services = () => {
                 </Box>
             </Flex>
 
-            <Flex display={{ base: "none", lg: "flex" }} h={{ lg: "72%" }} overflow="hidden" onMouseLeave={() => setActive(null)}>
+            <Flex display={{ base: "none", lg: "flex" }} h={{ lg: "100%" }} overflow="hidden" onMouseLeave={() => setActive(null)}>
                 {services.map((service, index) => (
                     <Flex
+                    h='700px'
                         key={service.title}
                         flex={
                             active === null
@@ -103,7 +110,7 @@ const Services = () => {
                                     ? "auto"
                                     : "none"
                         }
-                        transition="all .95s cubic-bezier(.22,1,.36,1)"
+                        transition="all 1.7s cubic-bezier(.22,1,.36,1)"
                         position="relative"
                         cursor="pointer"
                         overflow="hidden"
@@ -192,35 +199,75 @@ const Services = () => {
                 ))}
             </Grid>
 
-            <Grid display={{ base: "grid", md: "none" }} templateColumns="1fr">
-                {services.map((service) => (
-                    <Box key={service.title} h="220px" position="relative">
-                        <Image
-                            src={service.image}
-                            w="100%"
-                            h="100%"
-                            objectFit="cover"
-                        />
-
-                        <Box
-                            position="absolute"
-                            inset={0}
-                            bg="rgba(0,0,0,.35)"
-                        />
-
-                        <Flex
-                            position="absolute"
-                            inset={0}
-                            align="center"
-                            justify="center"
+            <Box display={{ base: "block", md: "none" }} h='290px'>
+                <Swiper
+                    // modules={[Pagination]}
+                    className="servicesMobileSwiper"
+                    slidesPerView="auto"
+                    centeredSlides
+                    loop
+                    spaceBetween={18}
+                    pagination={{
+                        clickable: true,
+                    }}
+                >
+                    {services.map((service) => (
+                        <SwiperSlide
+                            key={service.title}
+                            style={{
+                                width: "88%",
+                            }}
                         >
-                            <Text fontWeight="600">
-                                {service.title}
-                            </Text>
-                        </Flex>
-                    </Box>
-                ))}
-            </Grid>
+                            <Box
+                                h="240px"
+                                display={'flex'}
+                                justifyContent={'center'}
+                                // position="relative"
+                                overflow="hidden"
+                                bgImage={`url(${service.image})`}
+                                backgroundPosition={'center'}
+                                bgSize={'cover  '}
+                                bgRepeat={'no-repeat'}
+                            >
+                                {/* <Image
+                                    src={service.image}
+                                    w="100%"
+                                    h="240px"
+                                    objectFit="cover"
+                                /> */}
+
+                                {/* <Box
+                                    position="absolute"
+                                    inset={0}
+                                    bg="rgba(0,0,0,.35)"
+                                /> */}
+
+                                <Flex
+                                    // position="absolute"
+                                    // inset={0}
+                                    align="center"
+                                    justify="center"
+                                    justifyContent={'flex-start'}
+                                    alignItems={'flex-start'}
+                                    mt={2}
+                                >
+                                    <Text
+                                        color="#fff"
+                                        fontSize="13px"
+                                        fontWeight="400"
+                                        letterSpacing="1px"
+
+                                        // boxShadow={'2px 3px 4px 0px #0000007D'}
+                                        dropShadow={'2px 3px 4px 0px #0000007D'}
+                                    >
+                                        {service.title}
+                                    </Text>
+                                </Flex>
+                            </Box>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </Box>
         </Box>
     )
 }

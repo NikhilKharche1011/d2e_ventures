@@ -1,26 +1,72 @@
 import Navbar from "../../layout/Navbar";
-import { herosectiongif } from "../../assets/assets";
+import {  homeherosectionvideo } from "../../assets/assets";
 import { Button, chakra, Flex, Text } from "@chakra-ui/react";
 import { motion } from "motion/react";
+import { useEffect, useRef } from "react";
 
 const HeroSection = () => {
 
     const MotionFlex = chakra(motion(Flex))
+    // const START_TIME = 7; // seconds
+
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+        const video = videoRef.current;
+
+        if (!video) return;
+
+        const handleLoadedMetadata = () => {
+            video.currentTime = 5.5;
+            video.play();
+        };
+
+        if (video.readyState >= 1) {
+            handleLoadedMetadata();
+        } else {
+            video.addEventListener("loadedmetadata", handleLoadedMetadata);
+        }
+
+        return () => {
+            video.removeEventListener("loadedmetadata", handleLoadedMetadata);
+        };
+    }, []);
     return (
         <Flex
             h="100vh"
             w="100%"
-            bgImage={`url(${herosectiongif})`}
-            bgSize="cover"
-            backgroundPosition="center"
-            bgRepeat="no-repeat"
+            // bgImage={`url(${herosectiongif})`}
+            // bgSize="cover"
+            // backgroundPosition="center"
+            // bgRepeat="no-repeat"
+            position={'relative'}
+
+            
         >
+            <video
+                ref={videoRef}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    position: 'absolute',
+                    top: 0,
+                    left: 0
+                }}
+            >
+                <source src={homeherosectionvideo} type="video/mp4" />
+            </video>
             <Flex
                 flexDir="column"
                 w="100%"
                 h="100%"
                 bg="#00000080"
-
+                zIndex={1111}
             >
                 <Navbar />
 
@@ -46,7 +92,7 @@ const HeroSection = () => {
                             scale: 1,
                             opacity: 2,
                             transition: {
-                                duration: 4,
+                                duration: 2,
                                 ease: "easeInOut",
                             }
                         }}

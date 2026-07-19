@@ -35,39 +35,47 @@ const faqData = [
 
 const Faq = () => {
     return (
-        <Box
+        <Flex
             w="100%"
             h={{
                 base: "auto",
-                lg: "100vh",
+                lg: "100%",
             }}
-            minH={{
-                base: "auto",
-                lg: "650px",
-            }}
+            // minH={{
+            //     base: "auto",
+            //     lg: "650px",
+            // }}
+            py={{ base: 3, md: 8, lg: '100px' }}
             bg="#1C1B1A"
             color="#FFFFFF"
+            px={{
+                base: 6,
+                md: 10,
+                lg: 20,
+            }}
+            flexDirection={'column'}
+            justifyContent={'center'}
         >
             <Flex
                 w="100%"
-                maxW="1600px"
                 h="100%"
-                mx="auto"
-                px={{
-                    base: "6%",
-                    md: "8%",
-                    lg: "7%",
-                }}
+                // maxW="1600px"
+                // mx="auto"
+                // px={{
+                //     base: 6,
+                //     md: 10,
+                //     lg: 20,
+                // }}
                 py={{
                     base: "70px",
                     md: "90px",
                     lg: "0",
                 }}
-                pl={{
-                    base: "6%",
-                    md: "8%",
-                    lg: "20px",
-                }}
+                // pl={{
+                //     base: "6%",
+                //     md: "8%",
+                //     lg: "20px",
+                // }}
                 direction={{
                     base: "column",
                     lg: "row",
@@ -105,8 +113,8 @@ const Faq = () => {
 
                     <Text
                         mt={{
-                            base: 4,
-                            lg: 6,
+                            base: 3,
+                            lg: 4,
                         }}
                         fontSize={{
                             base: "24px",
@@ -194,7 +202,7 @@ const Faq = () => {
                     </Accordion.Root>
                 </Box>
             </Flex>
-        </Box>
+        </Flex>
     );
 };
 

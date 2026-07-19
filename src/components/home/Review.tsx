@@ -1,11 +1,11 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Mousewheel } from "swiper/modules";
+import { Autoplay, EffectCreative, Mousewheel } from "swiper/modules";
 
 import "swiper/css";
 
-import { servicesdemo } from "../../assets/assets";
+import { homereview1, homereview2, homereview3, homereview4 } from "../../assets/assets";
 
 type ReviewType = {
     review: string;
@@ -21,14 +21,14 @@ const reviews: ReviewType[] = [
             "From our very first consultation, we knew we were in safe hands. D2E team handled everything, from architectural planning to interiors and final execution for our bungalow in Pune. The final outcome exceeded our expectations.",
         name: "Rohit & Pooja Kulkarni",
         location: "Pune",
-        image: servicesdemo,
+        image: homereview1,
     },
     {
         review:
             "I approached D2E Ventures for my office in Nashik. Every phase of the project was managed professionally, from planning to execution. Their project management, regular updates, and quality control gave me complete confidence. Delivered on time, exactly as I envisioned.",
         name: "Shreyas Deshmukh",
         location: "Nashik",
-        image: servicesdemo,
+        image: homereview2,
         dark: true,
     },
     {
@@ -36,14 +36,14 @@ const reviews: ReviewType[] = [
             "Designing our first home was a big decision, and the whole team made the entire journey effortless. They understood our lifestyle, suggested practical solutions, and created interiors that matched our vision. They took care of everything while we focused on our family.",
         name: "Neha & Aditya Patil",
         location: "Kolhapur",
-        image: servicesdemo,
+        image: homereview3,
     },
     {
         review:
             "After consulting multiple firms across Maharashtra, we chose D2E Ventures for their complete end-to-end solutions. Their team guided us from plot planning and design consultation to construction and interiors. We highly recommend D2E Venture to anyone looking for a reliable architecture and construction partner.",
         name: "Dr. Akshay & Dr. Rutuja Joshi",
         location: "Sangli",
-        image: servicesdemo,
+        image: homereview4,
         dark: true,
     },
 ];
@@ -52,27 +52,32 @@ const Review = () => {
     return (
         <Box
             w="100%"
-            h={{ base: "auto", lg: "70vh" }}
+            h={{ base: "auto", lg: "700px" }}
             minH={{ base: "auto", lg: "700px" }}
             bg="#FAF9F6"
             overflow="hidden"
         >
             <Flex
                 h="100%"
-                maxW="1600px"
-                mx="auto"
+                // maxW="1500px"
+                // mx="auto"
                 px={{
-                    base: "6%",
-                    md: "8%",
-                    lg: "7%",
+                    base: 6,
+                    md: 10,
+                    lg: 20,
                 }}
-                pl={{
-                    base: "6%",
-                    md: "8%",
-                    lg: "20px",
+                // pl={{
+                //     base: "6%",
+                //     md: "8%",
+                //     lg: "20px",
+                // }}
+                py={{
+                    base: "50px",
+                    md: "80px",
+                    lg: "0",
                 }}
-                // py={{
-                //     base: "70px",
+                // pt={{
+                //     base: "25px",
                 //     md: "80px",
                 //     lg: "0",
                 // }}
@@ -86,7 +91,7 @@ const Review = () => {
                 }}
                 justifyContent="space-between"
                 gap={{
-                    base: 12,
+                    base: 8,
                     lg: 20,
                 }}
 
@@ -102,9 +107,9 @@ const Review = () => {
                         fontSize={{
                             base: "30px",
                             md: "38px",
-                            lg: "44px",
+                            lg: "40px",
                         }}
-                        lineHeight="1.05"
+                        lineHeight="1.2"
                         color="#000000"
                         fontWeight="400"
                     >
@@ -118,7 +123,7 @@ const Review = () => {
                         fontSize={{
                             base: "48px",
                             md: "58px",
-                            lg: "68px",
+                            lg: "60px",
                         }}
                         lineHeight="1"
                         color="#000000"
@@ -131,16 +136,16 @@ const Review = () => {
                 </Box>
 
                 <Flex
+                    display={{ base: "none", lg: "flex" }}
                     w={{ base: "100%", lg: "32%", }}
                     // boxShadow=' rgba(0, 0, 0, 0.45) 0px -25px 20px -20px'
                     alignItems={'flex-end'}
                     h='90%'
                     position={'relative'}
                 >
-                    <Box position={'absolute'} top={0} w='100%' left={0} bgColor={'red'} filter={'blur(5px)'}></Box>
+                    {/* <Box position={'absolute'} top={0} w='100%' left={0} bgColor={'red'} filter={'blur(5px)'}></Box> */}
                     <Flex
 
-                        // h={'60vh'}
 
                         h="100%"
                         w="100%"
@@ -264,6 +269,116 @@ const Review = () => {
                         </Swiper>
                     </Flex>
                 </Flex>
+                <Box
+                    display={{ base: "block", lg: "none" }}
+                    w="100%"
+                // mt={10}
+                >
+                    <Swiper
+                        className="reviewCreativeSwiper"
+                        grabCursor
+                        effect="creative"
+                        // loop
+                        centeredSlides
+                        loop={true}
+                        speed={2000}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                            pauseOnMouseEnter: true,
+                            stopOnLastSlide: false,
+                        }}
+                        mousewheel={{
+                            forceToAxis: true,
+                            releaseOnEdges: false,
+                        }}
+
+                        modules={[EffectCreative, Autoplay, Mousewheel]}
+                        creativeEffect={{
+                            prev: {
+                                shadow: true,
+                                translate: [0, 0, -400],
+                            },
+                            next: {
+                                translate: ["100%", 0, 0],
+                            },
+                        }}
+                    >
+                        {reviews.map((review, index) => (
+                            <SwiperSlide key={index}>
+                                <Box
+                                    h="340px"
+                                    bg={review.dark ? "#1C1B1A" : "#FFFFFF"}
+                                    color={review.dark ? "#FFFFFF" : "#1C1B1A"}
+                                    border="1px solid"
+                                    borderColor="#E6E6E6"
+                                    borderRadius="18px"
+                                    p={5}
+                                    display="flex"
+                                    flexDirection="column"
+                                    justifyContent="space-between"
+                                    boxShadow={
+                                        review.dark
+                                            ? "none"
+                                            : "0px 8px 24px rgba(0,0,0,.15)"
+                                    }
+                                >
+                                    <Text
+                                        fontSize="14px"
+                                        lineHeight="1.7"
+                                        // overflow="hidden"
+                                        css={{
+                                            display: "-webkit-box",
+                                            WebkitLineClamp: 9,
+                                            WebkitBoxOrient: "vertical",
+                                        }}
+                                    >
+                                        {review.review}
+                                    </Text>
+
+                                    <Flex
+                                        mt={6}
+                                        align="center"
+                                        gap={4}
+                                    >
+                                        <Image
+                                            src={review.image}
+                                            w="50px"
+                                            h="50px"
+                                            borderRadius="full"
+                                            objectFit="cover"
+                                        />
+
+                                        <Box>
+                                            <Text
+                                                fontWeight="600"
+                                                fontSize="14px"
+                                            >
+                                                {review.name}
+                                            </Text>
+
+                                            <Flex
+                                                mt={1}
+                                                px={3}
+                                                py="2px"
+                                                borderRadius="20px"
+                                                border="1px solid"
+                                                borderColor={
+                                                    review.dark ? "#666" : "#DDD"
+                                                }
+                                                w="fit-content"
+                                            >
+                                                <Text fontSize="11px">
+                                                    {review.location}
+                                                </Text>
+                                            </Flex>
+                                        </Box>
+                                    </Flex>
+                                </Box>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </Box>
             </Flex>
         </Box>
     );

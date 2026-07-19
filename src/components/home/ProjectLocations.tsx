@@ -148,7 +148,6 @@ const ProjectLocations = () => {
                 </Flex>
 
                 {/* Right */}
-
                 <Flex justify="center">
                     <Box
                         position="relative"
@@ -168,20 +167,26 @@ const ProjectLocations = () => {
                         {/* Mumbai */}
                         <Box
                             position="absolute"
-                            left="11%"
-                            top="39%"
-                            transform="translate(-50%, -50%)"
+                            left={{ base: "4%", md: "4%" }}
+                            top={{ base: "36%", md: "36%" }}
                         >
                             <Box
-                                w="14px"
-                                h="14px"
+                                w={{ base: "10px", md: "14px" }}
+                                h={{ base: "10px", md: "14px" }}
                                 bg="#C8A96B"
                                 borderRadius="full"
                                 animation={`${pulse} 1.2s ease-in-out infinite`}
                             />
+
                             <Text
-                                mt={1}
-                                fontSize="20px"
+                                position="absolute"
+                                left={{ base: "14px", md: "18px" }}
+                                top="-8px"
+                                whiteSpace="nowrap"
+                                fontSize={{
+                                    base: "11px",
+                                    md: "13px",
+                                }}
                                 color="#1E1E1E"
                                 fontWeight="500"
                             >
@@ -192,20 +197,26 @@ const ProjectLocations = () => {
                         {/* Nashik */}
                         <Box
                             position="absolute"
-                            left="23%"
-                            top="24%"
-                            transform="translate(-50%, -50%)"
+                            left={{ base: "16%", md: "16%" }}
+                            top={{ base: "20%", md: "20%" }}
                         >
                             <Box
-                                w="10px"
-                                h="10px"
+                                w={{ base: "8px", md: "10px" }}
+                                h={{ base: "8px", md: "10px" }}
                                 bg="#C8A96B"
                                 borderRadius="full"
                                 animation={`${pulse} 1.2s ease-in-out infinite`}
                             />
+
                             <Text
-                                mt={1}
-                                fontSize="20px"
+                                position="absolute"
+                                left={{ base: "12px", md: "16px" }}
+                                top="-10px"
+                                whiteSpace="nowrap"
+                                fontSize={{
+                                    base: "11px",
+                                    md: "13px",
+                                }}
                                 color="#1E1E1E"
                                 fontWeight="500"
                             >
@@ -213,22 +224,59 @@ const ProjectLocations = () => {
                             </Text>
                         </Box>
 
+                        {/* Konkan */}
                         <Box
                             position="absolute"
-                            left="19%"
-                            top="55%"
-                            transform="translate(-50%, -50%)"
+                            left={{ base: "5%", md: "5%" }}
+                            top={{ base: "45%", md: "45%" }}
                         >
                             <Box
-                                w="20px"
-                                h="20px"
+                                w={{ base: "8px", md: "10px" }}
+                                h={{ base: "8px", md: "10px" }}
                                 bg="#C8A96B"
                                 borderRadius="full"
                                 animation={`${pulse} 1.2s ease-in-out infinite`}
                             />
+
                             <Text
-                                mt={1}
-                                fontSize="20px"
+                                position="absolute"
+                                left={{ base: "12px", md: "16px" }}
+                                top="-10px"
+                                whiteSpace="nowrap"
+                                fontSize={{
+                                    base: "11px",
+                                    md: "13px",
+                                }}
+                                color="#1E1E1E"
+                                fontWeight="500"
+                            >
+                                Konkan
+                            </Text>
+                        </Box>
+
+                        {/* Pune */}
+                        <Box
+                            position="absolute"
+                            left={{ base: "18%", md: "18%" }}
+                            top={{ base: "48%", md: "48%" }}
+                        >
+                            <Box
+                                w={{ base: "14px", md: "20px" }}
+                                h={{ base: "14px", md: "20px" }}
+                                bg="#C8A96B"
+                                borderRadius="full"
+                                animation={`${pulse} 1.2s ease-in-out infinite`}
+                            />
+
+                            <Text
+                                position="absolute"
+                                left={{ base: "18px", md: "24px" }}
+                                top="-6px"
+                                whiteSpace="nowrap"
+                                fontSize={{
+                                    base: "11px",
+                                    md: "13px",
+                                }}
                                 color="#1E1E1E"
                                 fontWeight="500"
                             >
@@ -244,48 +292,107 @@ const ProjectLocations = () => {
                 maxW="1400px"
                 mx="auto"
                 mt={{
-                    base: 14,
+                    base: 10,
+                    md: 14,
                     lg: 20,
                 }}
                 templateColumns={{
-                    base: "repeat(2,1fr)",
-                    md: "repeat(4,1fr)",
+                    base: "repeat(2, 1fr)",
+                    md: "repeat(4, 1fr)",
                 }}
-                // borderTop="1px solid rgba(255,255,255,.08)"
+                gap={{
+                    base: 8,
+                    md: 0,
+                }}
+
+                gapX={{
+                    base: 4,
+                    md: 0,
+                }}
+
                 pt={8}
             >
                 {stats.map((item, i) => (
                     <Flex
-                        key={item.end}
+                        key={i}
                         justify="center"
-                        align="center"
-                        gap={5}
-                        py={5}
+                        align="flex-start"
+                        gap={{
+                            base: 3,
+                            md: 4,
+                        }}
+                        py={{
+                            base: 2,
+                            md: 5,
+                        }}
+                        px={{
+                            base: 2,
+                            md: 4,
+                        }}
                         borderRight={{
+                            base: "none",
                             md:
                                 i !== stats.length - 1
                                     ? "1px solid #C8A96B80"
                                     : "none",
                         }}
                     >
-                        <Image
-                            src={item.icon}
-                            w="34px"
-                        />
+                        {/* Icon */}
+                        <Flex
+                            w={{
+                                base: "42px",
+                                md: "52px",
+                                lg: "60px",
+                            }}
+                            justify="center"
+                            align="flex-start"
+                            flexShrink={0}
+                            pt="4px"
+                        >
+                            <Image
+                                src={item.icon}
+                                w={{
+                                    base: "28px",
+                                    md: "34px",
+                                    lg: "42px",
+                                }}
+                                h="auto"
+                            />
+                        </Flex>
 
-                        <Box>
+                        {/* Text */}
+                        <Box
+                            flex={1}
+                            textAlign="left"
+                        >
                             <Text
                                 color="#C8A96B"
                                 fontWeight="700"
-                                fontSize="30px"
+                                lineHeight="1"
+                                fontSize={{
+                                    base: "24px",
+                                    sm: "28px",
+                                    md: "30px",
+                                    lg: "36px",
+                                }}
                             >
-                                <CountUp end={item.end} suffix={item.suffix} />
+                                <CountUp
+                                    end={item.end}
+                                    suffix={item.suffix}
+                                />
                             </Text>
 
                             <Text
+                                mt={2}
                                 color="#D9D9D9"
+                                lineHeight="1.5"
                                 whiteSpace="pre-line"
-                                fontSize="15px"
+                                fontSize={{
+                                    base: "13px",
+                                    sm: "13px",
+                                    md: "14px",
+                                    lg: "15px",
+                                }}
                             >
                                 {item.label}
                             </Text>

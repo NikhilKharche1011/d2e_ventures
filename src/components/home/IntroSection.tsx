@@ -36,11 +36,12 @@ const features = [
 
 const IntroSection = () => {
     return (
-        <Box
+        <Flex
             py={{ base: "70px", lg: "110px" }}
             px={{ base: "5%", xl: "7%" }}
             bg="white"
             mb={'2.47%'}
+        w='100%'
         >
             <Grid
                 maxW="1500px"
@@ -257,7 +258,7 @@ const IntroSection = () => {
                     </Grid>
                 </Box>
             </Grid>
-        </Box>
+        </Flex>
     )
 }
 

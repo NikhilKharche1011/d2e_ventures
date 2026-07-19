@@ -38,8 +38,9 @@ const Footer = () => {
             bg="#1A1A1A"
             color="white"
             borderTopRadius="40px"
+            pb={0}
             px={{ base: 6, md: 10, lg: 14 }}
-            py={{ base: 5, lg: 7 }}
+            // py={{ base: 5, lg: 7 }}
         >
             <Grid
                 templateColumns={{
@@ -47,7 +48,8 @@ const Footer = () => {
                     sm: "1fr 1fr",
                     lg: "1.2fr 1fr 1.5fr 1.2fr",
                 }}
-                gap={{ base: 10, lg: 8 }}
+                gap={{ base: 10, lg: 6 }}
+                py={{ base: 4, lg: '90px' }}
             >
 
 
@@ -136,7 +138,7 @@ const Footer = () => {
                             </Flex>
                         </Flex>
 
-                        <Flex gap={4} align="flex-start">
+                        <Flex gap={4} align="center">
 
                             <Flex bgColor={'#FFFFFF0D'} p={2} border={'1px solid #FFFFFF1A'} borderRadius={'50%'}>
                                 <Image
@@ -146,14 +148,14 @@ const Footer = () => {
                                     objectFit={'contain'}
                                 />
                             </Flex>
-                            <Flex direction="column">
+                            <Flex justifyContent={'center'} direction="column">
                                 <Text color="#D2D2D2">
                                     d2eventurespvtltd@gmail.com
                                 </Text>
 
-                                <Text color="#D2D2D2">
+                                {/* <Text color="#D2D2D2">
                                     support@thetork.com
-                                </Text>
+                                </Text> */}
                             </Flex>
                         </Flex>
                     </Flex>
@@ -187,28 +189,28 @@ const Footer = () => {
                         >
                             <Text>
                                 Monday - Friday:
-                                09:00 - 20:00
+                                09:00 AM - 08:00 PM
                             </Text>
 
                             <Text mt={1}>
                                 Sunday & Saturday:
-                                10:30 - 22:30
+                                10:30 AM - 10:30 PM
                             </Text>
                         </Flex>
                     </Flex>
 
                     <Flex mt={8} gap={3}>
                         {[
-                            instagram,
-                            linkidin,
-                            facebook,
-                            twitter,
-                            youtube,
+                            { icon: instagram, link: 'https://www.instagram.com/d2e_ventures_designtoexecution/' },
+                            { icon: linkidin, link: 'https://www.linkedin.com/company/d2eventures/' },
+                            { icon: facebook, link: '' },
+                            { icon: twitter, link: '' },
+                            { icon: youtube, link: '' },
                         ].map((icon, index) => (
 
-                            <Flex key={index} bgColor={'#FFFFFF0D'} p={2} border={'1px solid #FFFFFF1A'} borderRadius={'50%'}>
+                            <Flex onClick={() => window.open(icon.link)} key={index} bgColor={'#FFFFFF0D'} p={2} border={'1px solid #FFFFFF1A'} borderRadius={'50%'}>
                                 <Image
-                                    src={icon}
+                                    src={icon.icon}
                                     w='20px'
                                     h='20px'
                                     objectFit={'contain'}
@@ -221,7 +223,7 @@ const Footer = () => {
             </Grid>
 
             <Separator
-                mt={10}
+                // mt={10}
                 mb={2}
                 // border={'1px solid #fff'}
                 borderColor="#FFFFFF"
@@ -253,6 +255,7 @@ const Footer = () => {
                     </Link>
                 </Flex>
             </Flex>
+            <Text textAlign={'center'} color={'#FCFBF8'} mt={4} fontWeight={200} pb={1} fontSize={'11px'}>Designed & built by Swanan Studio.</Text>
         </Box>
     );
 };
